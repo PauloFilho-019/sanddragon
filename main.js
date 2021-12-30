@@ -36,12 +36,12 @@ let canvas,
       return this.x + this.altura * 0.75;
     },
   },
-  predio = {
-    x: 520,
-    y: 190,
-    altura: 360,
-    largura: 50,
-    cor: "#ACA0A0",
+  sol = {
+    x: 990,
+    y: 10,
+    altura: 200,
+    largura: 200,
+    cor: "#ffff00",
     desenha: function () {
       ctx.fillStyle = this.cor;
       ctx.fillRect(this.x, this.y, this.largura, this.altura);
@@ -95,7 +95,7 @@ function geranuvem() {
     vx: 0,
     vy: 0,
     x: Math.random() * (1200 - 0) + 0,
-    velocidade: Math.random() * (1.5 - 0) + 0,
+    velocidade: Math.random() * (0.5 - 0) + 0,
     y: Math.random() * (1000 - 0) + 0,
     altura: Math.random() * (83 - 46) + 46,
     largura: Math.random() * (240 - 110) + 110,
@@ -125,7 +125,7 @@ function geranuvem2() {
     vx: 0,
     vy: 0,
     x: Math.random() * (1200 - 0) + 0,
-    velocidade: Math.random() * (-1.5 - 0) + 0,
+    velocidade: Math.random() * (-1.2 - 0) + 0,
     y: Math.random() * (1000 - 0) + 0,
     altura: Math.random() * (83 - 46) + 46,
     largura: Math.random() * (240 - 110) + 110,
@@ -153,7 +153,7 @@ function geranuvem2() {
 function geraNuvens2() {
   let nubia2 = [];
   0;
-  for (let i = 0; i < 25; i++) {
+  for (let i = 0; i < 20; i++) {
     let x = Math.random() * (1200 - 0) + 0;
     let y = Math.random() * (225 - 0) + 0;
     const newNuvem2 = geranuvem2();
@@ -166,7 +166,7 @@ function geraNuvens2() {
 function geraNuvens() {
   let nubia = [];
   0;
-  for (let i = 0; i < 25; i++) {
+  for (let i = 0; i < 20; i++) {
     let x = Math.random() * (1200 - 0) + 0;
     let y = Math.random() * (225 - 0) + 0;
     const newNuvem = geranuvem();
@@ -218,7 +218,7 @@ function desenha() {
   ctx.fillRect(0, 0, LARGURA, ALTURA);
   chao.desenha();
   nuvens2.forEach((v) => v.desenha());
-  predio.desenha();
+  sol.desenha();
   bloco.desenha();
   nuvens.forEach((v) => v.desenha());
   ctx.restore();
